@@ -5,6 +5,11 @@ namespace eplayers.Models
 {
     public class EPlayersBase
     {
+
+        /// <summary>
+        /// metodo para criar a pasta eo arquivo .csv
+        /// </summary>
+        /// <param name="_path"></param>
         public void CreateFolderAndFile(string _path){
 
             string folder   = _path.Split("/")[0];
@@ -19,6 +24,12 @@ namespace eplayers.Models
             }
         }
 
+
+        /// <summary>
+        /// metodo para ler todas as linhas do csv
+        /// </summary>
+        /// <param name="PATH"></param>
+        /// <returns></returns>
          public List<string> ReadAllLinesCSV(string PATH){
             
             List<string> linhas = new List<string>();
@@ -33,6 +44,11 @@ namespace eplayers.Models
             return linhas;
         }
 
+        /// <summary>
+        /// metodo para reescrever o csv depois de apagar
+        /// </summary>
+        /// <param name="PATH"></param>
+        /// <param name="linhas"></param>
         public void RewriteCSV(string PATH, List<string> linhas)
         {
             using(StreamWriter output = new StreamWriter(PATH))

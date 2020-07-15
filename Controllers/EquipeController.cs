@@ -13,14 +13,29 @@ namespace eplayers.Controllers
 {
     public class EquipeController : Controller
     {
+
+        /// <summary>
+        /// Cria nova equipe
+        /// </summary>
+        /// <returns></returns>
         Equipe equipeModel = new Equipe();
 
+
+        /// <summary>
+        /// Metodo construtor de equipe
+        /// </summary>
+        /// <returns></returns>
         public IActionResult Index()
         {
             ViewBag.Equipes = equipeModel.Ler();
             return View();
         }
 
+        /// <summary>
+        /// Metodo para cadastrar equipes
+        /// </summary>
+        /// <param name="form"></param>
+        /// <returns>equipe cadstrada</returns>
         public IActionResult Cadastrar(IFormCollection form)
         {
             Equipe novaEquipe = new Equipe();
@@ -57,7 +72,13 @@ namespace eplayers.Controllers
             
         }
 
-        [Route("{id}")]
+
+        /// <summary>
+        /// metodo para apagar equipe
+        /// </summary>
+        /// <param name="id">id da equipe</param>
+        /// <returns>equipe apagada</returns>
+        [Route("Equpe/{id}")]
         public IActionResult Excluir(int id)
         {
             equipeModel.Remover(id);

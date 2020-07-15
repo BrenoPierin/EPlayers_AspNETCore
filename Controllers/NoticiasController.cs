@@ -8,26 +8,34 @@ namespace eplayers.Controllers
 {
     public class NoticiasController : Controller
     {
-
+        
         Noticias noticiaModel = new Noticias();
 
-
+        /// <summary>
+        /// metodo construtor de noticias
+        /// </summary>
+        /// <returns></returns>
         public IActionResult Index()
         {
             ViewBag.Noticias = noticiaModel.Ler();
             return View();
         }
 
+        /// <summary>
+        /// metodo de cadastrar noticias
+        /// </summary>
+        /// <param name="form"></param>
+        /// <returns></returns>
         public IActionResult Cadastrar(IFormCollection form)
         {
             Noticias novaNoticia = new Noticias();
-            novaNoticia.IdNoticia = Int32.Parse( form["IdEquipe"] );
-            novaNoticia.Titulo = form["Nome"];
-            novaNoticia.Texto = form["Nome"];
+            novaNoticia.IdNoticia = Int32.Parse( form["IdNoticia"] );
+            novaNoticia.Titulo = form["Titulo"];
+            novaNoticia.Texto = form["Texto"];
            
            // Upload Início
             var file    = form.Files[0];
-            var folder  = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/Equipes");
+            var folder  = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/Noticias");
 
             if(file != null)
             {
@@ -55,7 +63,12 @@ namespace eplayers.Controllers
             
         }
 
-        [Route("{id}")]
+        /// <summary>
+        /// metodo para apagar noticia
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [Route("Notica/{id}")]
         public IActionResult Excluir(int id)
         {
             noticiaModel.Remover(id);
