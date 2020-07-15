@@ -14,10 +14,17 @@ namespace eplayers.Models
 
         private const string PATH = "Database/noticias.csv";
 
+        /// <summary>
+        /// metodo construtor
+        /// </summary>
         public Noticias(){
             CreateFolderAndFile(PATH);
         }
 
+        /// <summary>
+        /// metodo para alterar algo na noticia
+        /// </summary>
+        /// <param name="n"></param>
         public void Alterar(Noticias n)
         {
             List<string> linhas = ReadAllLinesCSV(PATH);
@@ -26,16 +33,29 @@ namespace eplayers.Models
             RewriteCSV(PATH, linhas);
         }
 
+        /// <summary>
+        /// metodo para criar uma nova noticia
+        /// </summary>
+        /// <param name="n"></param>
         public void Criar(Noticias n)
         {
             string[] linha = { PrepararLinha(n) };
             File.AppendAllLines(PATH, linha);
         }
 
+        /// <summary>
+        /// metodo de prepara a linha do csv
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
         private string PrepararLinha(Noticias n){
             return $"{n.IdNoticia};{n.Titulo};{n.Texto};{n.Imagem}";
         }
 
+        /// <summary>
+        /// metodo para ler e passar para o csv
+        /// </summary>
+        /// <returns></returns>
         public List<Noticias> Ler()
         {
             List<Noticias> noticias = new List<Noticias>();
@@ -54,6 +74,10 @@ namespace eplayers.Models
             return noticias;
         }
 
+        /// <summary>
+        /// metodo para excluir uma noticia pelo id
+        /// </summary>
+        /// <param name="id">id da noticia</param>
         public void Remover(int id)
         {
             List<string> linhas = ReadAllLinesCSV(PATH);

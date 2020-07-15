@@ -11,10 +11,17 @@ namespace eplayers.Models
         public string Imagem { get; set; }
         private const string PATH = "Database/equipe.csv";
 
+        /// <summary>
+        /// metodo construtor
+        /// </summary>
         public Equipe(){
             CreateFolderAndFile(PATH);
         }
 
+        /// <summary>
+        /// metodo para alterar uma equipe
+        /// </summary>
+        /// <param name="e"></param>
         public void Alterar(Equipe e)
         {
             List<string> linhas = ReadAllLinesCSV(PATH);
@@ -23,6 +30,10 @@ namespace eplayers.Models
             RewriteCSV(PATH, linhas);
         }
 
+        /// <summary>
+        /// metodo para criar uma nova equipe 
+        /// </summary>
+        /// <param name="e"></param>
         public void Criar(Equipe e)
         {
             string[] linha = { PrepararLinha(e) };
@@ -32,6 +43,10 @@ namespace eplayers.Models
             return $"{e.IdEquipe};{e.Nome};{e.Imagem}";
         }
 
+        /// <summary>
+        /// metodo para ler e escrever no csv
+        /// </summary>
+        /// <returns></returns>
         public List<Equipe> Ler()
         {
             List<Equipe> equipes = new List<Equipe>();
@@ -49,7 +64,10 @@ namespace eplayers.Models
             return equipes;
         }
         
-
+        /// <summary>
+        /// metodo para excluit uma equipe do csv
+        /// </summary>
+        /// <param name="id">id da equipe</param>
         public void Remover(int id)
         {
             List<string> linhas = ReadAllLinesCSV(PATH);
