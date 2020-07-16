@@ -21,7 +21,6 @@ C:\Breno USA\Senai\eplayers\obj\Debug\netcoreapp3.1\eplayers.TagHelpers.output.c
 C:\Breno USA\Senai\eplayers\obj\Debug\netcoreapp3.1\eplayers.RazorCoreGenerate.cache
 C:\Breno USA\Senai\eplayers\obj\Debug\netcoreapp3.1\Razor\Views\Equipe\Index.cshtml.g.cs
 C:\Breno USA\Senai\eplayers\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Breno USA\Senai\eplayers\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Breno USA\Senai\eplayers\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Breno USA\Senai\eplayers\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Breno USA\Senai\eplayers\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
