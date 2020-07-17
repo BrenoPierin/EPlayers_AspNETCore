@@ -20526,11 +20526,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Breno USA\\Senai\\eplayers\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Breno USA\\Senai\\eplayers\\Views\\Noticias\\Index.cshtml",
       "TargetPath": "Views\\Noticias\\Index.cshtml",
       "FileKind": "mvc"
